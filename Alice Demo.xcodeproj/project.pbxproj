@@ -16,6 +16,9 @@
 		1A7902E01617370F005FB132 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DD1617370F005FB132 /* SDL_image.framework */; };
 		1A7902E11617370F005FB132 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DE1617370F005FB132 /* SDL.framework */; };
 		1A7902E516173915005FB132 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902E416173915005FB132 /* OpenGL.framework */; };
+		1A7902E716173FCD005FB132 /* Lua.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DC1617370F005FB132 /* Lua.framework */; };
+		1A7902E816173FCD005FB132 /* SDL_image.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DD1617370F005FB132 /* SDL_image.framework */; };
+		1A7902E916173FCD005FB132 /* SDL.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DE1617370F005FB132 /* SDL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,22 @@
 			remoteInfo = alice;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A7902E616173FAD005FB132 /* Copy Frameworks into .app bundle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A7902E716173FCD005FB132 /* Lua.framework in Copy Frameworks into .app bundle */,
+				1A7902E816173FCD005FB132 /* SDL_image.framework in Copy Frameworks into .app bundle */,
+				1A7902E916173FCD005FB132 /* SDL.framework in Copy Frameworks into .app bundle */,
+			);
+			name = "Copy Frameworks into .app bundle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A7902A31617341F005FB132 /* Alice Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alice Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +180,7 @@
 				1A79029F1617341F005FB132 /* Sources */,
 				1A7902A01617341F005FB132 /* Frameworks */,
 				1A7902A11617341F005FB132 /* Resources */,
+				1A7902E616173FAD005FB132 /* Copy Frameworks into .app bundle */,
 			);
 			buildRules = (
 			);
@@ -301,6 +321,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = src/osx/Prefix.pch;
 				INFOPLIST_FILE = osx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -313,6 +334,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = src/osx/Prefix.pch;
 				INFOPLIST_FILE = osx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
