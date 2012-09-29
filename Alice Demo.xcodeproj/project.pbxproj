@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A7902A81617341F005FB132 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902A71617341F005FB132 /* Cocoa.framework */; };
+		1A7902D51617360C005FB132 /* libalbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902D2161735F7005FB132 /* libalbase.a */; };
+		1A7902D61617360C005FB132 /* libalice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902D4161735F7005FB132 /* libalice.a */; };
+		1A7902D81617361C005FB132 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A7902D71617361C005FB132 /* main.c */; };
+		1A7902DB161736AE005FB132 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7902DA161736AE005FB132 /* SDLMain.m */; };
+		1A7902DF1617370F005FB132 /* Lua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DC1617370F005FB132 /* Lua.framework */; };
+		1A7902E01617370F005FB132 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DD1617370F005FB132 /* SDL_image.framework */; };
+		1A7902E11617370F005FB132 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DE1617370F005FB132 /* SDL.framework */; };
+		1A7902E516173915005FB132 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902E416173915005FB132 /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A7902D1161735F7005FB132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7902C9161735F7005FB132 /* Alice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1AFBAD0F14DD4D1300E28C0A;
+			remoteInfo = albase;
+		};
+		1A7902D3161735F7005FB132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7902C9161735F7005FB132 /* Alice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A42FD87160DF06700807A51;
+			remoteInfo = alice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A7902A31617341F005FB132 /* Alice Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alice Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7902A71617341F005FB132 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1A7902AA1617341F005FB132 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1A7902AB1617341F005FB132 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1A7902AC1617341F005FB132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1A7902AF1617341F005FB132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = osx/Info.plist; sourceTree = "<group>"; };
+		1A7902C9161735F7005FB132 /* Alice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alice.xcodeproj; path = alice/Alice.xcodeproj; sourceTree = "<group>"; };
+		1A7902D71617361C005FB132 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		1A7902D9161736AE005FB132 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLMain.h; path = alice/src/osx/SDLMain.h; sourceTree = SOURCE_ROOT; };
+		1A7902DA161736AE005FB132 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = alice/src/osx/SDLMain.m; sourceTree = SOURCE_ROOT; };
+		1A7902DC1617370F005FB132 /* Lua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lua.framework; path = /Library/Frameworks/Lua.framework; sourceTree = "<absolute>"; };
+		1A7902DD1617370F005FB132 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
+		1A7902DE1617370F005FB132 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
+		1A7902E2161737AB005FB132 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = alice/src/osx/Prefix.pch; sourceTree = SOURCE_ROOT; };
+		1A7902E416173915005FB132 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7902A01617341F005FB132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7902E516173915005FB132 /* OpenGL.framework in Frameworks */,
+				1A7902DF1617370F005FB132 /* Lua.framework in Frameworks */,
+				1A7902E01617370F005FB132 /* SDL_image.framework in Frameworks */,
+				1A7902E11617370F005FB132 /* SDL.framework in Frameworks */,
+				1A7902D51617360C005FB132 /* libalbase.a in Frameworks */,
+				1A7902D61617360C005FB132 /* libalice.a in Frameworks */,
+				1A7902A81617341F005FB132 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A7902981617341F005FB132 = {
+			isa = PBXGroup;
+			children = (
+				1A7902C9161735F7005FB132 /* Alice.xcodeproj */,
+				1A7902AD1617341F005FB132 /* Source */,
+				1A7902AE1617341F005FB132 /* Supporting Files */,
+				1A7902A61617341F005FB132 /* Frameworks */,
+				1A7902A41617341F005FB132 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A7902A41617341F005FB132 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902A31617341F005FB132 /* Alice Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A7902A61617341F005FB132 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902E416173915005FB132 /* OpenGL.framework */,
+				1A7902DC1617370F005FB132 /* Lua.framework */,
+				1A7902DD1617370F005FB132 /* SDL_image.framework */,
+				1A7902DE1617370F005FB132 /* SDL.framework */,
+				1A7902A71617341F005FB132 /* Cocoa.framework */,
+				1A7902A91617341F005FB132 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A7902A91617341F005FB132 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902AA1617341F005FB132 /* AppKit.framework */,
+				1A7902AB1617341F005FB132 /* CoreData.framework */,
+				1A7902AC1617341F005FB132 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1A7902AD1617341F005FB132 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902E3161737BD005FB132 /* osx */,
+				1A7902D71617361C005FB132 /* main.c */,
+			);
+			name = Source;
+			path = src;
+			sourceTree = "<group>";
+		};
+		1A7902AE1617341F005FB132 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902AF1617341F005FB132 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A7902CA161735F7005FB132 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902D2161735F7005FB132 /* libalbase.a */,
+				1A7902D4161735F7005FB132 /* libalice.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A7902E3161737BD005FB132 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				1A7902E2161737AB005FB132 /* Prefix.pch */,
+				1A7902D9161736AE005FB132 /* SDLMain.h */,
+				1A7902DA161736AE005FB132 /* SDLMain.m */,
+			);
+			name = osx;
+			path = ../alice/src/osx;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A7902A21617341F005FB132 /* Alice Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7902C11617341F005FB132 /* Build configuration list for PBXNativeTarget "Alice Demo" */;
+			buildPhases = (
+				1A79029F1617341F005FB132 /* Sources */,
+				1A7902A01617341F005FB132 /* Frameworks */,
+				1A7902A11617341F005FB132 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Alice Demo";
+			productName = "Alice Demo";
+			productReference = 1A7902A31617341F005FB132 /* Alice Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A79029A1617341F005FB132 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "James Deery";
+			};
+			buildConfigurationList = 1A79029D1617341F005FB132 /* Build configuration list for PBXProject "Alice Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1A7902981617341F005FB132;
+			productRefGroup = 1A7902A41617341F005FB132 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1A7902CA161735F7005FB132 /* Products */;
+					ProjectRef = 1A7902C9161735F7005FB132 /* Alice.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1A7902A21617341F005FB132 /* Alice Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1A7902D2161735F7005FB132 /* libalbase.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libalbase.a;
+			remoteRef = 1A7902D1161735F7005FB132 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A7902D4161735F7005FB132 /* libalice.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libalice.a;
+			remoteRef = 1A7902D3161735F7005FB132 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A7902A11617341F005FB132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A79029F1617341F005FB132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7902D81617361C005FB132 /* main.c in Sources */,
+				1A7902DB161736AE005FB132 /* SDLMain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A7902BF1617341F005FB132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = alice/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		1A7902C01617341F005FB132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = alice/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
+		1A7902C21617341F005FB132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/osx/Prefix.pch;
+				INFOPLIST_FILE = osx/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1A7902C31617341F005FB132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/osx/Prefix.pch;
+				INFOPLIST_FILE = osx/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A79029D1617341F005FB132 /* Build configuration list for PBXProject "Alice Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7902BF1617341F005FB132 /* Debug */,
+				1A7902C01617341F005FB132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7902C11617341F005FB132 /* Build configuration list for PBXNativeTarget "Alice Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7902C21617341F005FB132 /* Debug */,
+				1A7902C31617341F005FB132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A79029A1617341F005FB132 /* Project object */;
+}
