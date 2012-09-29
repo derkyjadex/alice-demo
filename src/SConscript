@@ -22,3 +22,4 @@ if env['PLATFORM'] == 'darwin':
 	sources += ['osx/SDLMain.m']
 
 env.Program('alice-demo', sources)
+env.Install('demo.lua')
