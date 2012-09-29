@@ -19,6 +19,7 @@
 		1A7902E716173FCD005FB132 /* Lua.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DC1617370F005FB132 /* Lua.framework */; };
 		1A7902E816173FCD005FB132 /* SDL_image.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DD1617370F005FB132 /* SDL_image.framework */; };
 		1A7902E916173FCD005FB132 /* SDL.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DE1617370F005FB132 /* SDL.framework */; };
+		1A7902F11617612A005FB132 /* demo.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1A7902F0161760F8005FB132 /* demo.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		1A7902DE1617370F005FB132 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
 		1A7902E2161737AB005FB132 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = alice/src/osx/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		1A7902E416173915005FB132 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		1A7902F0161760F8005FB132 /* demo.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = demo.lua; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				1A7902E3161737BD005FB132 /* osx */,
 				1A7902D71617361C005FB132 /* main.c */,
+				1A7902F0161760F8005FB132 /* demo.lua */,
 			);
 			name = Source;
 			path = src;
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7902F11617612A005FB132 /* demo.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

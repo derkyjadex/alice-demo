@@ -9,13 +9,9 @@ int main(int argc, char *argv[])
 
 	AlHost *host = NULL;
 
-	const char *scripts[] = {
-		NULL
-	};
-
 	TRY(al_host_systems_init());
 	TRY(al_host_init(&host));
-	TRY(al_load_scripts(host->lua, scripts));
+	TRY(al_host_run_script(host, "demo.lua"));
 
 	al_host_run(host);
 
