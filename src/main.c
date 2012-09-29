@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2012 James Deery
+ * Released under the MIT license <http://opensource.org/licenses/MIT>.
+ * See COPYING for details.
+ */
+
 #include <SDL/SDL.h>
 
 #include "alice/host.h"

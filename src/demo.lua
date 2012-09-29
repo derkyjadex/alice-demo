@@ -1,3 +1,7 @@
+-- Copyright (c) 2012 James Deery
+-- Released under the MIT license <http://opensource.org/licenses/MIT>.
+-- See COPYING for details.
+
 _, _, root_width, root_height = Widget.root:get_bounds()
 
 Widget.root:set_fill_colour(0.1, 0.2, 0.3, 1.0)
