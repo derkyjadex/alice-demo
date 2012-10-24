@@ -37,7 +37,7 @@ hello_widget:bind_down(function ()
 	Widget.root:invalidate()
 end)
 bye_widget:bind_down(function ()
-	Widget.root:text('$1.234.567,89')
+	Widget.root:text('«€1.234.567,89, s’il vous plaît»')
 	Widget.root:invalidate()
 end)
 
@@ -74,4 +74,16 @@ open_widget:bind_down(function()
 
 	Widget.root:add_child(file_widget)
 	file_widget:layout(40, nil, 40, 40, nil, 40)
+end)
+
+Widget.root:bind_key(function(_, key)
+	if key == 8 then
+		Widget.root:text('')
+		Widget.root:invalidate()
+	end
+end)
+Widget.root:bind_text(function(_, text)
+	text = Widget.root:text() .. text
+	Widget.root:text(text)
+	Widget.root:invalidate()
 end)
