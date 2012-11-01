@@ -76,14 +76,11 @@ open_widget:bind_down(function()
 	file_widget:layout(40, nil, 40, 40, nil, 40)
 end)
 
-Widget.root:bind_key(function(_, key)
-	if key == 8 then
-		Widget.root:text('')
-		Widget.root:invalidate()
-	end
-end)
-Widget.root:bind_text(function(_, text)
-	text = Widget.root:text() .. text
-	Widget.root:text(text)
-	Widget.root:invalidate()
+local text_box = TextBox()
+Widget.root:add_child(text_box)
+text_box:layout(40, nil, 10, 40, nil, nil)
+text_box:grab_keyboard()
+
+Widget.root:bind_down(function()
+	Widget.root:grab_keyboard()
 end)
