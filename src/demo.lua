@@ -19,13 +19,12 @@ local exit_widget = toolbar:add_button(0.9, 0.3, 0.1)
 exit_widget:bind_up(commands.exit)
 exit_widget:model_location(15, 15)
 exit_widget:model_scale(80)
-exit_widget:model((function()
+do
 	local cross = Model()
 	cross:add_path(1, -0.15, 0.15, 0.15, -0.15)
 	cross:add_path(1, -0.15, -0.15, 0.15, 0.15)
-
-	return cross
-end)())
+	exit_widget:model(cross)
+end
 
 Widget.root:add_child(toolbar)
 toolbar:layout(nil, nil, 10, nil, nil, 10)
