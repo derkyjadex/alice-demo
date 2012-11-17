@@ -13,7 +13,7 @@ if env['PLATFORM'] == 'raspi':
 	env.Append(CCFLAGS=['-D_GNU_SOURCE', '-DRASPI'])
 	env.Append(CPPPATH=['/opt/vc/include', '/opt/vc/include/interface/vcos/pthreads'])
 	env.Append(LIBPATH=['/opt/vc/lib'])
-	env.Append(LIBS=['lua5.1', 'SDL', 'SDL_image', 'GLESv2'])
+	env.Append(LIBS=['lua5.2', 'SDL', 'SDL_image', 'GLESv2'])
 
 
 sources = ['main.c']
