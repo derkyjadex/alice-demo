@@ -4,73 +4,65 @@
 -- See COPYING for details.
 
 do
-	Widget.root():fill_colour(0.1, 0.2, 0.3, 1.0)
-	Widget.root():grid_size(20, 20)
-	Widget.root():grid_colour(0.2, 0.3, 0.4)
-	Widget.root():text_location(40, 10)
-	Widget.root():text('Hello World')
+	local root = Widget.root()
+		:fill_colour(0.1, 0.2, 0.3, 1.0)
+		:grid_size(20, 20)
+		:grid_colour(0.2, 0.3, 0.4)
+		:text_location(40, 10)
+		:text('Hello World')
 
-	local toolbar = Toolbar()
-	Widget.root():add_child(toolbar)
+	local toolbar = Toolbar():add_to(root)
 
 	toolbar:add_button(0.2, 0.5, 0.9)
 		:bind_down(function()
-			Widget.root():text('Quick brown fox')
-			Widget.root():invalidate()
+			root:text('Quick brown fox')
+				:invalidate()
 		end)
 
 	toolbar:add_button(0.0, 0.8, 0.2)
 		:bind_down(function()
-			Widget.root():text('«€1.234.567,89, s’il vous plaît»')
-			Widget.root():invalidate()
+			root:text('«€1.234.567,89, s’il vous plaît»')
+				:invalidate()
 		end)
 
 	toolbar:add_button(0.9, 0.6, 0.3)
 		:bind_down(function()
-			local shield, file_widget
+			local shield = Widget():add_to(root)
+				:fill_colour(0.2, 0.2, 0.2, 0.5)
+				:layout(0, nil, 0, 0, nil, 0)
 
-			shield = Widget()
-			shield:fill_colour(0.2, 0.2, 0.2, 0.5)
+			local file_widget
+			file_widget = FileWidget():add_to(root)
+				:bind_result(function(path)
+					shield:remove()
+					file_widget:remove()
 
-			file_widget = FileWidget(function(path)
-				shield:remove()
-				file_widget:remove()
-
-				if path then
-					Widget.root():text(path)
-					Widget.root():invalidate()
-				end
-			end)
-
-			Widget.root():add_child(shield)
-			shield:layout(0, nil, 0, 0, nil, 0)
-
-			Widget.root():add_child(file_widget)
-			file_widget:layout(40, nil, 40, 40, nil, 40)
+					if path then
+						root:text(path):invalidate()
+					end
+				end)
+				:layout(40, nil, 40, 40, nil, 40)
 		end)
 
-	toolbar:add_spacer()
+	SliderWidget():add_to(root)
+		:bind_change(function(x)
+			root:text_size(12 + x * 100)
+		end)
+		:layout(10, nil, nil, 10, nil, 10)
 
-	local slider_widget = SliderWidget(function(x)
-		Widget.root():text_size(12 + x * 100)
-	end)
-	Widget.root():add_child(slider_widget)
-	slider_widget:layout(10, nil, nil, 10, nil, 10)
-
-	local text_box = TextBox()
-	Widget.root():add_child(text_box)
-	text_box:layout(40, nil, 10, 40, nil, nil)
-	text_box:grab_keyboard()
+	TextBox():add_to(root)
+		:layout(40, nil, 10, 40, nil, nil)
+		:grab_keyboard()
 
 	local model_widget = ModelWidget()
-	Widget.root():add_child(model_widget)
-	model_widget:layout(40, nil, 10, 80, nil, 60)
+		:add_to(root)
+		:layout(40, nil, 10, 80, nil, 60)
 
-	local colour_widget = ColourWidget(function(r, g, b)
-		model_widget:set_path_colour(r, g, b)
-	end)
-	Widget.root():add_child(colour_widget)
-	colour_widget:layout(40, nil, nil, nil, nil, 10)
+	ColourWidget():add_to(root)
+		:bind_change(function(r, g, b)
+			model_widget:set_path_colour(r, g, b)
+		end)
+		:layout(40, nil, nil, nil, nil, 10)
 
 	toolbar:add_spacer()
 
@@ -84,20 +76,20 @@ do
 	toolbar:add_spacer()
 
 	do
-		local button = toolbar:add_button(0.9, 0.3, 0.1)
-		button:bind_up(commands.exit)
-
 		local cross = Model()
 		cross:add_path(1, -0.15, 0.15, 0.15, -0.15)
 		cross:add_path(1, -0.15, -0.15, 0.15, 0.15)
-		button:model(cross)
-		button:model_location(15, 15)
-		button:model_scale(80)
+
+		toolbar:add_button(0.9, 0.3, 0.1)
+			:bind_up(commands.exit)
+			:model(cross)
+			:model_location(15, 15)
+			:model_scale(80)
 	end
 
 	toolbar:layout(nil, nil, 10, nil, nil, 10)
 
-	Widget.root():bind_down(function()
-		Widget.root():grab_keyboard()
+	root:bind_down(function()
+		root:grab_keyboard()
 	end)
 end
