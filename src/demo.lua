@@ -75,17 +75,13 @@ do
 
 	toolbar:add_spacer()
 
-	do
-		local cross = Model()
-		cross:add_path(1, -0.15, 0.15, 0.15, -0.15)
-		cross:add_path(1, -0.15, -0.15, 0.15, 0.15)
-
-		toolbar:add_button(0.9, 0.3, 0.1)
-			:bind_up(commands.exit)
-			:model(cross)
-			:model_location(15, 15)
-			:model_scale(80)
-	end
+	toolbar:add_button(0.9, 0.3, 0.1)
+		:bind_up(commands.exit)
+		:model(Model(
+			{-0.15, 0.15, 0.15, -0.15},
+			{-0.15, -0.15, 0.15, 0.15}))
+		:model_location(15, 15)
+		:model_scale(80)
 
 	toolbar:layout(nil, nil, 10, nil, nil, 10)
 
