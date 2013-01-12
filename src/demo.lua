@@ -44,25 +44,28 @@ do
 				:layout(40, nil, 40, 40, nil, 40)
 		end)
 
+	local text_size = observable(24)
+	root:bind_property('text_size', text_size)
+
 	SliderWidget():add_to(root)
-		:bind_change(function(x)
-			root:text_size(12 + x * 100)
-		end)
 		:layout(10, nil, nil, 10, nil, 10)
+		:range(12, 112)
+		:bind_value(text_size)
 
 	TextBox():add_to(root)
 		:layout(40, nil, 10, 40, nil, nil)
 		:grab_keyboard()
 
+	local path_colour = observable(0.9, 0.5, 0.2)
+
 	local model_widget = ModelWidget()
 		:add_to(root)
 		:layout(40, nil, 10, 80, nil, 60)
+		:bind_path_colour(path_colour)
 
 	ColourWidget():add_to(root)
-		:bind_change(function(r, g, b)
-			model_widget:set_path_colour(r, g, b)
-		end)
 		:layout(40, nil, nil, nil, nil, 10)
+		:bind_value(path_colour)
 
 	toolbar:add_spacer()
 
