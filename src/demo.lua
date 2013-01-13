@@ -25,25 +25,6 @@ do
 				:invalidate()
 		end)
 
-	toolbar:add_button(0.9, 0.6, 0.3)
-		:bind_down(function()
-			local shield = Widget():add_to(root)
-				:fill_colour(0.2, 0.2, 0.2, 0.5)
-				:layout(0, nil, 0, 0, nil, 0)
-
-			local file_widget
-			file_widget = FileWidget():add_to(root)
-				:bind_result(function(path)
-					shield:remove()
-					file_widget:remove()
-
-					if path then
-						root:text(path):invalidate()
-					end
-				end)
-				:layout(40, nil, 40, 40, nil, 40)
-		end)
-
 	local text_size = observable(24)
 	root:bind_property('text_size', text_size)
 
@@ -52,20 +33,30 @@ do
 		:range(12, 112)
 		:bind_value(text_size)
 
-	TextBox():add_to(root)
-		:layout(40, nil, 10, 40, nil, nil)
-		:grab_keyboard()
-
 	local path_colour = observable(0.9, 0.5, 0.2)
 
 	local model_widget = ModelWidget()
 		:add_to(root)
-		:layout(40, nil, 10, 80, nil, 60)
+		:layout(40, nil, 10, 40, nil, 60)
 		:bind_path_colour(path_colour)
 
 	ColourWidget():add_to(root)
 		:layout(40, nil, nil, nil, nil, 10)
 		:bind_value(path_colour)
+
+	toolbar:add_button(0.9, 0.6, 0.3)
+		:bind_down(function()
+			show_load_file(function(path)
+				model_widget:load(path)
+			end)
+		end)
+
+	toolbar:add_button(0.8, 0.9, 0.1)
+		:bind_down(function()
+			show_save_file(function(path)
+				model_widget:save(path)
+			end)
+		end)
 
 	toolbar:add_spacer()
 
@@ -85,8 +76,4 @@ do
 			{3, 3, 27, 27}))
 
 	toolbar:layout(nil, nil, 10, nil, nil, 10)
-
-	root:bind_down(function()
-		root:grab_keyboard()
-	end)
 end
