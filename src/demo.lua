@@ -27,7 +27,8 @@ do
 
 	SliderWidget():add_to(root)
 		:layout(10, nil, nil, 10, nil, 10)
-		:range(0.1, 10)
+		:range(0.1, 200)
+		:scale_type(SliderWidget.LogScale)
 		:bind_value(model.scale)
 
 	PanningWidget():add_to(root)
