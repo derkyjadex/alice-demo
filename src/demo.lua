@@ -8,8 +8,36 @@ do
 		:fill_colour(0.1, 0.2, 0.3, 1.0)
 		:grid_size(20, 20)
 		:grid_colour(0.2, 0.3, 0.4)
-		:text_location(40, 10)
-		:text('Hello World')
+		:text_location(70, 10)
+		:text_size(20)
+		:text('<-- Drag me!')
+
+	local model = {
+		scale = observable(1),
+		pan = observable(0, 0),
+		path_colour = observable(0.9, 0.5, 0.2)
+	}
+
+	local model_widget = ModelWidget()
+		:add_to(root)
+		:layout(40, nil, 10, 40, nil, 60)
+		:bind_scale(model.scale)
+		:bind_pan(model.pan)
+		:bind_path_colour(model.path_colour)
+
+	SliderWidget():add_to(root)
+		:layout(10, nil, nil, 10, nil, 10)
+		:range(0.1, 10)
+		:bind_value(model.scale)
+
+	PanningWidget():add_to(root)
+		:layout(40, nil, nil, 10, nil, nil)
+		:bind_value(model.pan)
+		:bind_property('scale', model.scale)
+
+	ColourWidget():add_to(root)
+		:layout(40, nil, nil, nil, nil, 10)
+		:bind_value(model.path_colour)
 
 	local toolbar = Toolbar():add_to(root)
 
@@ -24,25 +52,6 @@ do
 			root:text('«€1.234.567,89, s’il vous plaît»')
 				:invalidate()
 		end)
-
-	local text_size = observable(24)
-	root:bind_property('text_size', text_size)
-
-	SliderWidget():add_to(root)
-		:layout(10, nil, nil, 10, nil, 10)
-		:range(12, 112)
-		:bind_value(text_size)
-
-	local path_colour = observable(0.9, 0.5, 0.2)
-
-	local model_widget = ModelWidget()
-		:add_to(root)
-		:layout(40, nil, 10, 40, nil, 60)
-		:bind_path_colour(path_colour)
-
-	ColourWidget():add_to(root)
-		:layout(40, nil, nil, nil, nil, 10)
-		:bind_value(path_colour)
 
 	toolbar:add_button(0.9, 0.6, 0.3)
 		:bind_down(function()
