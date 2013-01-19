@@ -13,9 +13,9 @@ do
 		:text('<-- Drag me!')
 
 	local model = {
-		scale = observable(1),
-		pan = observable(0, 0),
-		path_colour = observable(0.9, 0.5, 0.2)
+		scale = Observable(1),
+		pan = Observable(0, 0),
+		path_colour = Observable(0.9, 0.5, 0.2)
 	}
 
 	local model_widget = ModelWidget()
