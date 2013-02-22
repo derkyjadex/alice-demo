@@ -88,10 +88,4 @@ end
 do
 	local app = DemoApp()
 	build_ui(app)
-
-	app.model:load('/Users/james/Desktop/test3.model')
-	app.model_scale(1.5)
-	local path = app.model:add_path()
-	path.colour(0.5, 0.9, 0.3)
-	path:select()
 end
