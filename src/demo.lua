@@ -1,89 +1,97 @@
 -- demo.lua
--- Copyright (c) 2012 James Deery
+-- Copyright (c) 2012-2013 James Deery
 -- Released under the MIT license <http://opensource.org/licenses/MIT>.
 -- See COPYING for details.
 
-do
+local function DemoApp()
+	local self = {
+		root_text = Observable('<-- Drag me!'),
+		model = ModelContextViewModel(),
+		model_scale = Observable(1),
+		model_pan = Observable(0, 0)
+	}
+
+	function self.set_text_1()
+		self.root_text('Quick brown fox')
+	end
+	function self.set_text_2()
+		self.root_text('«€1.234.567,89, s’il vous plaît»')
+	end
+
+	function self.load()
+		show_load_file(function(path)
+			self.model.load(path)
+		end)
+	end
+	function self.save()
+		show_save_file(function(path)
+			self.model.save(path)
+		end)
+	end
+	function self.add_path()
+		self.model.add_path().select()
+	end
+	function self.remove_point()
+		self.model.remove_point()
+	end
+	function self.remove_path()
+		self.model.remove_path()
+	end
+
+	return self
+end
+
+local function build_ui(app)
 	local root = Widget.root()
 		:fill_colour(0.1, 0.2, 0.3, 1.0)
 		:grid_size(20, 20)
 		:grid_colour(0.2, 0.3, 0.4)
 		:text_location(70, 10)
 		:text_size(20)
-		:text('<-- Drag me!')
+		:bind_property('text', app.root_text)
 
-	local model = {
-		scale = Observable(1),
-		pan = Observable(0, 0),
-		path_colour = Observable(0.9, 0.5, 0.2)
-	}
-
-	local model_widget = ModelWidget()
-		:add_to(root)
+	ModelWidget():add_to(root)
 		:layout(40, nil, 10, 40, nil, 60)
-		:bind_scale(model.scale)
-		:bind_pan(model.pan)
-		:bind_path_colour(model.path_colour)
+		:bind_model(app.model)
+		:bind_scale(app.model_scale)
+		:bind_pan(app.model_pan)
 
 	SliderWidget():add_to(root)
 		:layout(10, nil, nil, 10, nil, 10)
 		:range(0.1, 200)
 		:scale_type(SliderWidget.LogScale)
-		:bind_value(model.scale)
+		:bind_value(app.model_scale)
 
 	PanningWidget():add_to(root)
 		:layout(40, nil, nil, 10, nil, nil)
-		:bind_value(model.pan)
-		:bind_property('scale', model.scale)
+		:bind_value(app.model_pan)
+		:bind_property('scale', app.model_scale)
 
 	ColourWidget():add_to(root)
 		:layout(40, nil, nil, nil, nil, 10)
-		:bind_value(model.path_colour)
+		:bind_value(app.model.current_colour)
 
-	local toolbar = Toolbar():add_to(root)
+	Toolbar():add_to(root)
+		:add_button(0.2, 0.5, 0.9, app.set_text_1)
+		:add_button(0.0, 0.8, 0.2, app.set_text_2)
+		:add_button(0.9, 0.6, 0.3, app.load)
+		:add_button(0.8, 0.9, 0.1, app.save)
+		:add_spacer()
+		:add_button(0.2, 0.5, 0.9, app.add_path)
+		:add_button(0.5, 0.1, 0.6, app.remove_point)
+		:add_button(0.8, 0.2, 0.2, app.remove_path)
+		:add_spacer()
+		:add_button(0.9, 0.3, 0.1, commands.exit)
+		:layout(nil, nil, 10, nil, nil, 10)
+end
 
-	toolbar:add_button(0.2, 0.5, 0.9)
-		:bind_down(function()
-			root:text('Quick brown fox')
-				:invalidate()
-		end)
+do
+	local app = DemoApp()
+	build_ui(app)
 
-	toolbar:add_button(0.0, 0.8, 0.2)
-		:bind_down(function()
-			root:text('«€1.234.567,89, s’il vous plaît»')
-				:invalidate()
-		end)
-
-	toolbar:add_button(0.9, 0.6, 0.3)
-		:bind_down(function()
-			show_load_file(function(path)
-				model_widget:load(path)
-			end)
-		end)
-
-	toolbar:add_button(0.8, 0.9, 0.1)
-		:bind_down(function()
-			show_save_file(function(path)
-				model_widget:save(path)
-			end)
-		end)
-
-	toolbar:add_spacer()
-
-	toolbar:add_button(0.2, 0.5, 0.9)
-		:bind_down(function() model_widget:add_path() end)
-	toolbar:add_button(0.5, 0.1, 0.6)
-		:bind_down(function() model_widget:remove_point() end)
-	toolbar:add_button(0.8, 0.2, 0.2)
-		:bind_down(function() model_widget:remove_path() end)
-
-	toolbar:add_spacer()
-
-	toolbar:add_button(0.9, 0.3, 0.1)
-		:bind_up(commands.exit)
-		:model(Model(
-			{3, 27, 27, 3},
-			{3, 3, 27, 27}))
-
-	toolbar:layout(nil, nil, 10, nil, nil, 10)
+	app.model:load('/Users/james/Desktop/test3.model')
+	app.model_scale(1.5)
+	local path = app.model:add_path()
+	path.colour(0.5, 0.9, 0.3)
+	path:select()
 end
