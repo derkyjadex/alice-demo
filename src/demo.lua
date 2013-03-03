@@ -20,22 +20,22 @@ local function DemoApp()
 
 	function self.load()
 		show_load_file(function(path)
-			self.model.load(path)
+			self.model:load(path)
 		end)
 	end
 	function self.save()
 		show_save_file(function(path)
-			self.model.save(path)
+			self.model:save(path)
 		end)
 	end
 	function self.add_path()
-		self.model.add_path().select()
+		self.model:add_path():select()
 	end
 	function self.remove_point()
-		self.model.remove_point()
+		self.model:remove_point()
 	end
 	function self.remove_path()
-		self.model.remove_path()
+		self.model:remove_path()
 	end
 
 	return self
