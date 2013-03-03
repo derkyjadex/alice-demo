@@ -44,7 +44,6 @@ end
 local function build_ui(app)
 	local root = Widget.root()
 		:fill_colour(0.1, 0.2, 0.3, 1.0)
-		:grid_size(20, 20)
 		:grid_colour(0.2, 0.3, 0.4)
 		:text_location(70, 10)
 		:text_size(20)
