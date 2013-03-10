@@ -41,9 +41,8 @@ local function DemoApp()
 	return self
 end
 
-local function build_ui(app)
-	local root = Widget.root()
-		:fill_colour(0.1, 0.2, 0.3, 1.0)
+local function DemoUI(root, app)
+	root:fill_colour(0.1, 0.2, 0.3, 1.0)
 		:grid_colour(0.2, 0.3, 0.4)
 		:text_location(70, 10)
 		:text_size(20)
@@ -82,9 +81,8 @@ local function build_ui(app)
 		:add_spacer()
 		:add_button(0.9, 0.3, 0.1, commands.exit)
 		:layout(nil, nil, 10, nil, nil, 10)
+
+	return root
 end
 
-do
-	local app = DemoApp()
-	build_ui(app)
-end
+DemoUI(Widget.root(), DemoApp())
