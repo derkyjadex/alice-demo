@@ -3,6 +3,8 @@
 -- Released under the MIT license <http://opensource.org/licenses/MIT>.
 -- See COPYING for details.
 
+local host = require 'host'
+
 local function DemoApp()
 	local self = {
 		root_text = Observable('<-- Drag me!'),
@@ -79,7 +81,7 @@ local function DemoUI(root, app)
 		:add_button(0.5, 0.1, 0.6, app.remove_point)
 		:add_button(0.8, 0.2, 0.2, app.remove_path)
 		:add_spacer()
-		:add_button(0.9, 0.3, 0.1, commands.exit)
+		:add_button(0.9, 0.3, 0.1, host.exit)
 		:layout(nil, nil, 10, nil, nil, 10)
 
 	return root
