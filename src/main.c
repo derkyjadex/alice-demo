@@ -4,7 +4,7 @@
  * See COPYING for details.
  */
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 #include "alice/host.h"
 #include "albase/script.h"

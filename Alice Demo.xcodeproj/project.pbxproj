@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A33D63E17B964D300366B51 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A33D63D17B964D300366B51 /* SDL2.framework */; };
+		1A33D64217B9666700366B51 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A33D64117B9666700366B51 /* SDL2_image.framework */; };
+		1A33D64317BAEF8300366B51 /* SDL2.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A33D63D17B964D300366B51 /* SDL2.framework */; };
+		1A33D64417BAEF8600366B51 /* SDL2_image.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A33D64117B9666700366B51 /* SDL2_image.framework */; };
 		1A7902A81617341F005FB132 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902A71617341F005FB132 /* Cocoa.framework */; };
 		1A7902D51617360C005FB132 /* libalbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902D2161735F7005FB132 /* libalbase.a */; };
 		1A7902D61617360C005FB132 /* libalice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902D4161735F7005FB132 /* libalice.a */; };
 		1A7902D81617361C005FB132 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A7902D71617361C005FB132 /* main.c */; };
-		1A7902DB161736AE005FB132 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7902DA161736AE005FB132 /* SDLMain.m */; };
 		1A7902DF1617370F005FB132 /* Lua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DC1617370F005FB132 /* Lua.framework */; };
-		1A7902E01617370F005FB132 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DD1617370F005FB132 /* SDL_image.framework */; };
-		1A7902E11617370F005FB132 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902DE1617370F005FB132 /* SDL.framework */; };
 		1A7902E516173915005FB132 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7902E416173915005FB132 /* OpenGL.framework */; };
 		1A7902E716173FCD005FB132 /* Lua.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DC1617370F005FB132 /* Lua.framework */; };
-		1A7902E816173FCD005FB132 /* SDL_image.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DD1617370F005FB132 /* SDL_image.framework */; };
-		1A7902E916173FCD005FB132 /* SDL.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 1A7902DE1617370F005FB132 /* SDL.framework */; };
 		1A7902F11617612A005FB132 /* demo.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1A7902F0161760F8005FB132 /* demo.lua */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +46,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1A7902E716173FCD005FB132 /* Lua.framework in Copy Frameworks into .app bundle */,
-				1A7902E816173FCD005FB132 /* SDL_image.framework in Copy Frameworks into .app bundle */,
-				1A7902E916173FCD005FB132 /* SDL.framework in Copy Frameworks into .app bundle */,
+				1A33D64317BAEF8300366B51 /* SDL2.framework in Copy Frameworks into .app bundle */,
+				1A33D64417BAEF8600366B51 /* SDL2_image.framework in Copy Frameworks into .app bundle */,
 			);
 			name = "Copy Frameworks into .app bundle";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A33D63D17B964D300366B51 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
+		1A33D64117B9666700366B51 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = /Library/Frameworks/SDL2_image.framework; sourceTree = "<absolute>"; };
 		1A7902A31617341F005FB132 /* Alice Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alice Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7902A71617341F005FB132 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1A7902AA1617341F005FB132 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -64,12 +65,7 @@
 		1A7902AF1617341F005FB132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = osx/Info.plist; sourceTree = "<group>"; };
 		1A7902C9161735F7005FB132 /* Alice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alice.xcodeproj; path = alice/Alice.xcodeproj; sourceTree = "<group>"; };
 		1A7902D71617361C005FB132 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		1A7902D9161736AE005FB132 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLMain.h; path = alice/src/osx/SDLMain.h; sourceTree = SOURCE_ROOT; };
-		1A7902DA161736AE005FB132 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = alice/src/osx/SDLMain.m; sourceTree = SOURCE_ROOT; };
 		1A7902DC1617370F005FB132 /* Lua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lua.framework; path = /Library/Frameworks/Lua.framework; sourceTree = "<absolute>"; };
-		1A7902DD1617370F005FB132 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
-		1A7902DE1617370F005FB132 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
-		1A7902E2161737AB005FB132 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = alice/src/osx/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		1A7902E416173915005FB132 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		1A7902F0161760F8005FB132 /* demo.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = demo.lua; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,10 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A33D64217B9666700366B51 /* SDL2_image.framework in Frameworks */,
+				1A33D63E17B964D300366B51 /* SDL2.framework in Frameworks */,
 				1A7902E516173915005FB132 /* OpenGL.framework in Frameworks */,
 				1A7902DF1617370F005FB132 /* Lua.framework in Frameworks */,
-				1A7902E01617370F005FB132 /* SDL_image.framework in Frameworks */,
-				1A7902E11617370F005FB132 /* SDL.framework in Frameworks */,
 				1A7902D51617360C005FB132 /* libalbase.a in Frameworks */,
 				1A7902D61617360C005FB132 /* libalice.a in Frameworks */,
 				1A7902A81617341F005FB132 /* Cocoa.framework in Frameworks */,
@@ -114,10 +110,10 @@
 		1A7902A61617341F005FB132 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A33D64117B9666700366B51 /* SDL2_image.framework */,
+				1A33D63D17B964D300366B51 /* SDL2.framework */,
 				1A7902E416173915005FB132 /* OpenGL.framework */,
 				1A7902DC1617370F005FB132 /* Lua.framework */,
-				1A7902DD1617370F005FB132 /* SDL_image.framework */,
-				1A7902DE1617370F005FB132 /* SDL.framework */,
 				1A7902A71617341F005FB132 /* Cocoa.framework */,
 				1A7902A91617341F005FB132 /* Other Frameworks */,
 			);
@@ -137,7 +133,6 @@
 		1A7902AD1617341F005FB132 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1A7902E3161737BD005FB132 /* osx */,
 				1A7902D71617361C005FB132 /* main.c */,
 				1A7902F0161760F8005FB132 /* demo.lua */,
 			);
@@ -160,17 +155,6 @@
 				1A7902D4161735F7005FB132 /* libalice.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		1A7902E3161737BD005FB132 /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				1A7902E2161737AB005FB132 /* Prefix.pch */,
-				1A7902D9161736AE005FB132 /* SDLMain.h */,
-				1A7902DA161736AE005FB132 /* SDLMain.m */,
-			);
-			name = osx;
-			path = ../alice/src/osx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7902D81617361C005FB132 /* main.c in Sources */,
-				1A7902DB161736AE005FB132 /* SDLMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +306,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = src/osx/Prefix.pch;
 				INFOPLIST_FILE = osx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,7 +318,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = src/osx/Prefix.pch;
 				INFOPLIST_FILE = osx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
