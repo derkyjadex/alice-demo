@@ -37,6 +37,13 @@
 			remoteGlobalIDString = 1A42FD87160DF06700807A51;
 			remoteInfo = alice;
 		};
+		1AFB1E1E17EDD468001FF73B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7902C9161735F7005FB132 /* Alice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A1A330417DC835B005BFA9B;
+			remoteInfo = aldatashow;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -158,6 +165,7 @@
 			children = (
 				1A7902D2161735F7005FB132 /* libalbase.a */,
 				1A7902D4161735F7005FB132 /* libalice.a */,
+				1AFB1E1F17EDD468001FF73B /* aldatashow */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +247,13 @@
 			fileType = archive.ar;
 			path = libalice.a;
 			remoteRef = 1A7902D3161735F7005FB132 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1AFB1E1F17EDD468001FF73B /* aldatashow */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = aldatashow;
+			remoteRef = 1AFB1E1E17EDD468001FF73B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
