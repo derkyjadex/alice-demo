@@ -87,4 +87,5 @@ local function DemoUI(root, app)
 	return root
 end
 
-DemoUI(Widget.root(), DemoApp())
+local app = DemoApp()
+DemoUI(Widget.root(), app)
