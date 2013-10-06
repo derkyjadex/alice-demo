@@ -7,37 +7,40 @@ local host = require 'host'
 
 local function DemoApp()
 	local self = {
-		root_text = Observable('<-- Drag me!'),
-		model = ModelContextViewModel(),
-		model_scale = Observable(1),
-		model_pan = Observable(0, 0)
+		root_text = Property('<-- Drag me!'),
+		model_scale = Property(1),
+		model_pan = Property(0, 0)
 	}
 
+	local model = ModelContextViewModel()
+
+	function self.model() return model end
+
 	function self.set_text_1()
-		self.root_text('Quick brown fox')
+		self:root_text('Quick brown fox')
 	end
 	function self.set_text_2()
-		self.root_text('«€1.234.567,89, s’il vous plaît»')
+		self:root_text('«€1.234.567,89, s’il vous plaît»')
 	end
 
 	function self.load()
 		show_load_file(function(path)
-			self.model:load(path)
+			model:load(path)
 		end)
 	end
 	function self.save()
 		show_save_file(function(path)
-			self.model:save(path)
+			model:save(path)
 		end)
 	end
 	function self.add_path()
-		self.model:add_path():select()
+		model:add_path():select()
 	end
 	function self.remove_point()
 		self.model:remove_point()
 	end
 	function self.remove_path()
-		self.model:remove_path()
+		model:remove_path()
 	end
 
 	return self
@@ -52,7 +55,7 @@ local function DemoUI(root, app)
 
 	ModelWidget():add_to(root)
 		:layout(40, nil, 10, 40, nil, 60)
-		:bind_model(app.model)
+		:bind_model(app:model())
 		:bind_scale(app.model_scale)
 		:bind_pan(app.model_pan)
 
@@ -69,7 +72,7 @@ local function DemoUI(root, app)
 
 	ColourWidget():add_to(root)
 		:layout(40, nil, nil, nil, nil, 10)
-		:bind_value(app.model.current_colour)
+		:bind_value(app:model().current_colour)
 
 	Toolbar():add_to(root)
 		:add_button(0.2, 0.5, 0.9, app.set_text_1)
