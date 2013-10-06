@@ -37,7 +37,10 @@ local function DemoApp()
 		model:add_path():select()
 	end
 	function self.remove_point()
-		self.model:remove_point()
+		local path = model:selected_path()
+		if path then
+			path:points()[1]:remove()
+		end
 	end
 	function self.remove_path()
 		model:remove_path()
