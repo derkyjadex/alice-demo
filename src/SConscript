@@ -7,7 +7,7 @@ env.Append(LIBPATH=['#alice/build/lib'])
 env.Append(LIBS=['alice', 'albase'])
 
 if env['PLATFORM'] == 'darwin':
-	env.Append(FRAMEWORKS=['Foundation', 'AppKit', 'Lua', 'SDL', 'SDL_image', 'OpenGL'])
+	env.Append(FRAMEWORKS=['Foundation', 'AppKit', 'Lua', 'SDL2', 'SDL2_image', 'OpenGL'])
 
 if env['PLATFORM'] == 'raspi':
 	env.Append(CCFLAGS=['-D_GNU_SOURCE', '-DRASPI'])
@@ -17,9 +17,6 @@ if env['PLATFORM'] == 'raspi':
 
 
 sources = ['main.c']
-
-if env['PLATFORM'] == 'darwin':
-	sources += ['osx/SDLMain.m']
 
 env.Program('alice-demo', sources)
 env.Install('demo.lua')
